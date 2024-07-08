@@ -1,0 +1,228 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins' , sans-serif;
+}
+
+body,html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.background, .foreground {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+
+.foreground {
+    z-index: 1;
+    pointer-events: none; /* Prevent interaction with the foreground */
+}
+.scene {
+    width: 100%;
+    height: 100%;
+    position: relative;
+   
+}
+
+.character {
+    position: absolute;
+    bottom: 30%; /* Adjust this value as needed */
+    width: 300px; /* Adjust size as needed */
+    height: auto;
+    animation: moveCharacter 8s linear infinite;
+}
+
+@keyframes moveCharacter {
+    0% {
+        transform: translateX(100vw) scaleX(1);
+    }
+    50% {
+        transform: translateX(-100vw) scaleX(1);
+    }
+    51% {
+        transform: translateX(-100vw) scaleX(-1);
+    }
+    100% {
+        transform: translateX(100vw) scaleX(-1);
+    }
+}
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background:no-repeat;
+    background-size: cover;
+    background-position: center;
+
+
+}
+.login{
+    width: 90%;
+    max-width: 400px;
+    background:transparent;
+    backdrop-filter: blur(50px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, -2);
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+    text-align: center;   
+    
+}
+.content h1{
+    font-size: 30px;
+    text-align: center;
+    color: brown;
+   
+}
+.content .user-box{
+    width: 100%;
+    padding: 10px;
+    background: white;
+    border-radius: 5px;
+    margin: 20px 0;
+    
+}
+.user-box input{
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid transparent;
+    
+}
+.user-box input::placeholder{
+    color: brown;
+}
+.buton{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    background: brown;
+    color: white;
+    cursor: pointer;
+    
+}
+.remember-box{
+    margin-top: 20px;
+    display: flex;
+   justify-content: space-between;
+}
+.remember-box a{
+    color: brown;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.remember-box a:hover{
+    color: brown;
+}
+.leaf {
+    position: absolute;
+    top: -100px;
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: fall infinite linear;
+}
+.leaf1 { background-image: url('cimg 1.png'); }
+.leaf2 { background-image: url('dimg1.png'); }
+.leaf3 { background-image: url('eimg1.png'); }
+.leaf-small {
+    width: 30px;
+    height: 30px;
+    opacity: 0.7; /* Make smaller leaves more transparent for background effect */
+}
+@keyframes fall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+.leaf1a { left: 10%; animation-duration: 5s; }
+.leaf2a { left: 30%; animation-duration: 7s; }
+.leaf3a { left: 60%; animation-duration: 6s; }
+.leaf4a { left: 80%; animation-duration: 8s; }
+.leaf5a { left: 15%; animation-duration: 5.5s; }
+.leaf6a { left: 50%; animation-duration: 6.5s; }
+.leaf7a { left: 70%; animation-duration: 7.5s; }
+.leaf8a { left: 90%; animation-duration: 8.5s; }
+.leaf9a { left: 25%; animation-duration: 9s; }
+.leaf10a { left: 40%; animation-duration: 10s; }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .login {
+        width: 90%;
+    }
+
+    .character {
+        width: 200px;
+    }
+
+    .button {
+        font-size: 18px;
+    }
+
+    .remember-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .remember-box a {
+        margin: 5px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    .button {
+        font-size: 16px;
+    }
+
+    .character {
+        width: 150px;
+    }
+
+    .user-box {
+        width: 80%;
+        margin: 10px auto;
+    }
+
+    .button {
+        width: 80%;
+        margin: 10px auto;
+    }
+
+    .remember-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .remember-box a {
+        margin: 5px 0;
+    }
+}
